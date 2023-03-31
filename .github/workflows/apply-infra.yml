@@ -21,7 +21,7 @@ jobs:
       - name: Terraform Init
         run: terraform init
         with:
-          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+          github-token: '${{ secrets.GCP_SA_KEY }}'
 
       - name: Terraform Format
         run: terraform fmt -check
@@ -29,10 +29,10 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
         with:
-          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+          github-token: '${{ secrets.GCP_SA_KEY }}'
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve
         with:
-          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+          github-token: '${{ secrets.GCP_SA_KEY }}'
