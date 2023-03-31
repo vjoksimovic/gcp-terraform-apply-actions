@@ -5,7 +5,7 @@ provider "google" {
 
 terraform {
   backend "gcs" {
-    bucket = "gd-gcp-hm-fm-sandbox-tfstate"
+    bucket = "gd-gcp-hm-fm-sandbox_cloudbuild"
     prefix = "terraform/state"
   }
 }
