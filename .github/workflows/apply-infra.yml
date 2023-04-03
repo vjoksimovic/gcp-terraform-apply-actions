@@ -44,7 +44,7 @@ jobs:
           secret: ${{ github.TOKEN }}
           approvers: vjoksimovic
           exclude-workflow-initiator-as-approver: false
-          issue-title: Approve Production Deployment
+          issue-title: Approve TF Infrastructure Deployment
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/feat/cicd' && github.event_name == 'push'
