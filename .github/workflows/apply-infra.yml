@@ -48,6 +48,6 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/feat/cicd' && github.event_name == 'push'
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -lock=false
         env:
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
