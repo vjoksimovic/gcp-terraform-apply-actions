@@ -45,6 +45,7 @@ jobs:
           secret: ${{ github.TOKEN }}
           approvers: vjoksimovic
           exclude-workflow-initiator-as-approver: false
+          issue-title: Approve Production Deployment
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
