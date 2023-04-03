@@ -47,7 +47,7 @@ jobs:
           issue-title: Approve Production Deployment
 
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/feat/cicd' && github.event_name == 'push'
         run: terraform apply
         env:
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
