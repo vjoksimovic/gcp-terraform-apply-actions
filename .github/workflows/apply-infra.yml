@@ -38,12 +38,12 @@ jobs:
 
       - name: Wait for approval
         uses: trstringer/manual-approval@v1
+        permissions:
+          issues: write
         with:
           secret: ${{ github.TOKEN }}
           approvers: vjoksimovic
           exclude-workflow-initiator-as-approver: false
-          permissions:
-            issues: write
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
