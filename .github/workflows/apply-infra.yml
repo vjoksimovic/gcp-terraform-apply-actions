@@ -41,6 +41,7 @@ jobs:
         with:
           secret: ${{ github.TOKEN }}
           approvers: vjoksimovic
+          exclude-workflow-initiator-as-approver: false
           permissions:
             issues: write
 
